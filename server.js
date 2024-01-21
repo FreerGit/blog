@@ -1,32 +1,30 @@
-const express = require('express')
-const app = express()
-const marked = require('marked')
+import { marked } from 'marked';
+const express = require('express');
+const fs = require('fs');
+const path = require('path');
+const ejs = require('ejs');
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const app = express();
+const PORT = 3000;
+// Set the view engine to EJS
+app.set('view engine', 'ejs');
+// Serve static files from the public folder
+app.use(express.static(path.join(import.meta.dir, 'public')));
+// Create a route for each Markdown post
+fs.readdir('./posts', (err, files) => {
+  files.forEach(file => {
+    const name = file.split('.')[0];
+    const filePath = path.join(import.meta.dir, 'posts', file);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    
+    const html = marked.parse(fileContents);
+    app.get(`/${name}`, (req, res) => {
+      res.render('post', { title: name, content: html });
+    });
+  });
+});
 
-app.get('/:filename', async (req, res) => {
-  const filename = req.params.filename
-  const markdown = `./posts/${filename}.md`
-  const file = Bun.file(markdown);
-  try {
-    const text = await file.text();
-    res.send(text);
-  } catch (err) {
-    res.send('Page not found');
-  }
 
-  
-  // fs.readFile(markdown, 'utf8', (err, data) => {
-  //   if (err) {
-  //     res.send('File not found')
-  //   } else {
-  //     const html = marked(data.toString())
-  //     res.send(html)
-  //   }
-  // })
-})
-app.listen(3000, () => {
-  console.log('Blog server listening on port 3000!')
-})
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
