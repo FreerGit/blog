@@ -6,6 +6,7 @@ const ejs = require('ejs');
 
 const app = express();
 const PORT = 3000;
+
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
 // Serve static files from the public folder
