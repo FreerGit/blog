@@ -1,23 +1,26 @@
 html, body {
     width: 100%;
     margin: 0 auto;
+    /* background-color: 	#ffffff; */
+
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    /* padding: 50px; */
-    /* font-family: Arial, sans-serif; */
-    background-color: blue;
+    font-family: Fira Sans, Georgia, serif;
+    font-size: 20px;
+    padding: 32px;
+    color: #333333;
 }
 
-p {
-    background-color: red;
+.header {
+    width: 100%;
+    background-color: #0d1117;
 }
 
 h1 {
     font-size: 36px;
     font-weight: bold;
+    text-align: center;
 }
 
 h2 {

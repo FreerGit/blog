@@ -1,0 +1,86 @@
+.hljs-keyword {
+    color: #D3C899;
+}
+
+.hljs-punctuation {
+    color: #d5c4a1;
+}
+
+.hljs-optional {
+    color: #e5c07b;
+}
+
+.hljs-errorhandling {
+    color: #e06c75;
+}
+
+.hljs-macro {
+    color: #61afef;
+    font-weight: bold;
+}
+
+.hljs-function {
+    color: #89C7CB;
+}
+
+.hljs-type {
+    color: #70AEB1;
+}
+
+.hljs-built_in {
+    color: #7CBBBE;
+}
+
+.hljs-title.function_ {
+    color: #89C7CB;
+}
+
+.hljs-params {
+    color: #89C7CB;
+}
+
+.hljs-params {
+    color: #98c379;
+}
+
+.hljs-property {
+    color: #262626;
+}
+
+.hljs-number {
+    color: #A2C6A2;
+}
+
+.hljs-string {
+    color: #C79292;
+}
+
+.hljs-comment {
+    color: #5c6370;
+}
+
+.hljs-comment-todo {
+    color: #d19a66;
+    font-weight: bold;
+}
+
+.hljs-meta-event {
+    color: #ff79c6;
+    font-weight: bold;
+}
+
+.hljs-literal {
+    color: #4b9d4b;
+}
+
+.hljs-multiline {
+    color: #e67e22;
+}
+
+.hljs {
+    color: #E0E0C9;
+}
+
+pre {
+    background: #262626;
+}
