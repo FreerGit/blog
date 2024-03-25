@@ -23,9 +23,11 @@ app.set('view engine', 'ejs');
 // Serve static files from the public folder
 app.use(express.static(path.join(import.meta.dir, 'public')));
 // Create a route for each Markdown post
-fs.readdir('./posts', (err, files) => {
+fs.readdir('./posts',  { recursive: true }, (err, files) => {
   files.forEach(file => {
-    const name = file.split('.')[0];
+    const split = file.split('.');
+    if (split.length == 1) return;
+    const name = split[0];
     const filePath = path.join(import.meta.dir, 'posts', file);
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const marked = new Marked(
