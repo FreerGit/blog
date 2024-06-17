@@ -1,0 +1,35 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = 'risotto'
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+
+[params]
+noindex = false
+
+[params.theme]
+# base16-dark gruvbox-dark tender windows-95
+palette = "my-vsc"
+
+[menu]
+  [[menu.main]]
+    identifier = "b"
+    name = "posts/markets"
+    url = "/posts/markets"
+    weight = 15
+  [[menu.main]]
+    identifier = "a"
+    name = "posts/tech"
+    url = "/posts/tech"
+    weight = 10
+
+# Sidebar: about/bio
+[params.about]
+title = "risotto"
+description = "A [hugo](https://gohugo.io) theme inspired by terminal ricing."
+# unicode/emoji logo:
+logo = "🍚"
